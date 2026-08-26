@@ -2,7 +2,7 @@ from passlib.context import CryptContext
 from jose import jwt, JWTError
 
 ALGORITHM = "HS256"
-KEY = "MX565"  # Replace with your actual secret key
+KEY = "MX565"  # Actual secret key
 ACCESS_TOKEN_EXPIRE_MINUTES = 30  # Token expiration time in minutes
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
