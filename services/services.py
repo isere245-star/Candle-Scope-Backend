@@ -1,6 +1,7 @@
 from database.database import *
 from models.models import *
 from auth.auth import *
+from schemas.schemas import *
 
 Session = Session()
 
@@ -14,7 +15,7 @@ def get_db():
         db.close()
 
 # Function to create a new user in the database
-def create_user(user: User):
+def create_user(user: User_create):
     
     # Create a new User instance with hashed password
     User_add = User( 
@@ -32,3 +33,4 @@ def create_user(user: User):
         Session.commit()
         Session.refresh(User_add)
         return User_add
+    return {"message": "Email already exists"} 
